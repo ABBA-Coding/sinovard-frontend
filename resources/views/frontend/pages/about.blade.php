@@ -36,11 +36,10 @@
                             <div class="info-section__card">
                                 <div class="info-section__subtitle">Качество</div>
                                 <div class="info-section__description">
-                                    Lorem Ipsum has been the industry's standard dummy text ever
-                                    since the 1500s, when an unknown Lorem Ipsum has been the
-                                    industry's standard Lorem Ipsum has been the industry's standard
-                                    dummy text ever since the 1500s, when an unknown Lorem Ipsum has
-                                    been the industry's standard
+                                    Мы предлагаем только проверенные запчасти от надежных производителей, которые
+                                    проходят строгий контроль качества. Каждая деталь соответствует международным
+                                    стандартам, что гарантирует её долговечность и надежность. Мы предоставляем гарантию
+                                    на всю продукцию, чтобы наши клиенты могли быть уверены в её надежности.
                                 </div>
                             </div>
                         </div>
@@ -92,9 +91,6 @@
                             <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-9">
                                 <div class="swiper swiper-7">
                                     <div class="swiper-wrapper">
-                                        <div class="swiper-slide">
-                                            {% include 'components/portners-card.html' %}
-                                        </div>
                                         <div class="swiper-slide">
                                             <div class="portners-card">
                                                 <div class="portners-card__logo">

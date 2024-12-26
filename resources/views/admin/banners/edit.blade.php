@@ -49,12 +49,23 @@
                             </div>
 
                             <!------ ссылка ------>
-                            <div class="form-group mb-0">
+                            <div class="form-group">
                                 <label>Ссылка</label>
                                 <input type="text"
                                        name="link"
                                        class="form-control"
                                        value="{{ old('link') ?? @$data->translate->link }}"
+                                       autocomplete="off"
+                                       title="">
+                            </div>
+
+                            <!------ btn_text ------>
+                            <div class="form-group mb-0">
+                                <label>Текст кнопки</label>
+                                <input type="text"
+                                       name="btn_text"
+                                       class="form-control"
+                                       value="{{ old('btn_text') ?? @$data->translate->btn_text }}"
                                        autocomplete="off"
                                        title="">
                             </div>

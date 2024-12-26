@@ -3,7 +3,6 @@
 namespace App\Http;
 
 use App\Http\Middleware\AdminPanel;
-use App\Http\Middleware\UserVerified;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -74,6 +73,8 @@ class Kernel extends HttpKernel
         'localeViewPath'          => \Mcamara\LaravelLocalization\Middleware\LaravelLocalizationViewPath::class,
 
         // admin panel role
-        'admin' => AdminPanel::class
+        'admin' => AdminPanel::class,
+
+        'basicAuth' => \App\Http\Middleware\BasicAuthenticate::class,
     ];
 }

@@ -8,7 +8,11 @@
                     </div>
                     <h2 class="form-section__title">Sinoward</h2>
                 </div>
-                <div class="form-section__text">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown Lorem Ipsum has been the industry's standard Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown Lorem Ipsum has been the industry's standard</div>
+                <div class="form-section__text">
+                    Наша цель — обеспечить быструю доставку, отличное обслуживание и профессиональную поддержку, помогая
+                    каждому клиенту найти нужную деталь для его автомобиля. Мы ценим доверие наших клиентов и строим
+                    долгосрочные отношения, ориентируясь на их потребности и удовлетворение.
+                </div>
             </div>
 
             <form action="{{ route('feedback') }}" method="POST" class="form-form feedbackForm">

@@ -10,65 +10,58 @@
                     комплектующих — мы готовы помочь вам выбрать лучшее. Оцените
                     удобство покупок с нами и уверенность в каждой детали!
                 </div>
-                <button class="btn btn-outline">
-                    <span>Узнать больше</span>
-                </button>
+                <div class="d-inline-block">
+                    <a href="{{ route('about') }}" class="btn btn-outline">
+                        <span>Узнать больше</span>
+                    </a>
+                </div>
             </div>
 
             <div class="services-section__cards">
                 <div class="services-card grid1">
                     <div class="services-card__top">
                         <div class="services-card__num">1</div>
-                        <div class="services-card__type">Качество</div>
+                        <div class="services-card__type">Широкий ассортимент продукции</div>
                     </div>
                     <div class="services-card__text">
-                        Lorem Ipsum has been the industry's standard dummy text ever since
-                        the 1500s, when an unknown Lorem Ipsum has been the industry's
-                        standard
+                        Мы предлагаем запчасти для разных марок и моделей автомобилей, что удовлетворяет потребности как
+                        частных, так и корпоративных клиентов.
                     </div>
                 </div>
                 <div class="services-card grid2">
                     <div class="services-card__top">
-                        <div class="services-card__num">1</div>
-                        <div class="services-card__type">Качество</div>
+                        <div class="services-card__num">2</div>
+                        <div class="services-card__type">Профессиональная консультация и поддержка</div>
                     </div>
                     <div class="services-card__text">
-                        Lorem Ipsum has been the industry's standard dummy text ever since
-                        the 1500s, when an unknown Lorem Ipsum has been the industry's
-                        standard
+                        Наши эксперты помогут с выбором запчастей и дадут рекомендации по установке.
                     </div>
                 </div>
                 <div class="services-card grid3">
                     <div class="services-card__top">
-                        <div class="services-card__num">1</div>
-                        <div class="services-card__type">Качество</div>
+                        <div class="services-card__num">3</div>
+                        <div class="services-card__type">Отсутствие посредников</div>
                     </div>
                     <div class="services-card__text">
-                        Lorem Ipsum has been the industry's standard dummy text ever since
-                        the 1500s, when an unknown Lorem Ipsum has been the industry's
-                        standard
+                        Работаем напрямую с производителями, что позволяет снизить цены и улучшить качество обслуживания.
                     </div>
                 </div>
                 <div class="services-card grid4">
                     <div class="services-card__top">
-                        <div class="services-card__num">1</div>
-                        <div class="services-card__type">Качество</div>
+                        <div class="services-card__num">4</div>
+                        <div class="services-card__type">Гибкость в работе с клиентами</div>
                     </div>
                     <div class="services-card__text">
-                        Lorem Ipsum has been the industry's standard dummy text ever since
-                        the 1500s, when an unknown Lorem Ipsum has been the industry's
-                        standard
+                        Мы предлагаем индивидуальные условия для розничных и оптовых покупателей, а также для автосервисов.
                     </div>
                 </div>
                 <div class="services-card grid5">
                     <div class="services-card__top">
-                        <div class="services-card__num">1</div>
-                        <div class="services-card__type">Качество</div>
+                        <div class="services-card__num">5</div>
+                        <div class="services-card__type">Конкурентные цены и гибкие условия</div>
                     </div>
                     <div class="services-card__text">
-                        Lorem Ipsum has been the industry's standard dummy text ever since
-                        the 1500s, when an unknown Lorem Ipsum has been the industry's
-                        standard
+                        Мы предлагаем выгодные цены, скидки для постоянных клиентов и акционные предложения.
                     </div>
                 </div>
             </div>

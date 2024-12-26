@@ -16,7 +16,7 @@ class Product extends Model
 
     protected $table = 'products';
 
-    protected $fillable = ['file_id', 'category_id', 'vendor_code', 'price', 'quantity', 'slug', 'status', 'top', 'created_at', 'updated_at'];
+    protected $fillable = ['name', 'ref_id', 'file_id', 'category_id', 'vendor_code', 'price', 'quantity', 'slug', 'status', 'top', 'created_at', 'updated_at'];
 
     protected $with = ['translate', 'category'];
 

@@ -17,7 +17,8 @@
                     @endforeach
                 </div>
 
-                @component('frontend.components.pagination') @endcomponent
+                {{ $news->links('frontend.components.pagination') }}
+
             </div>
         </section>
 

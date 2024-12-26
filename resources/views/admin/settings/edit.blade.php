@@ -38,6 +38,51 @@
                                        title="">
                             </div>
 
+                            <!------ telegram ------>
+                            <div class="form-group">
+                                <label>Telegram</label>
+                                <input type="text"
+                                       class="form-control"
+                                       name="telegram"
+                                       value="{{ old('telegram') ?? $data->{'telegram'} }}"
+                                       autocomplete="off"
+                                       title="">
+                            </div>
+
+                            <!------ youtube ------>
+                            <div class="form-group">
+                                <label>Youtube</label>
+                                <input type="text"
+                                       class="form-control"
+                                       name="youtube"
+                                       value="{{ old('youtube') ?? $data->{'youtube'} }}"
+                                       autocomplete="off"
+                                       title="">
+                            </div>
+
+                            <!------ facebook ------>
+                            <div class="form-group">
+                                <label>Facebook</label>
+                                <input type="text"
+                                       class="form-control"
+                                       name="facebook"
+                                       value="{{ old('facebook') ?? $data->{'facebook'} }}"
+                                       autocomplete="off"
+                                       title="">
+                            </div>
+
+                            <!------ instagram ------>
+                            <div class="form-group">
+                                <label>Instagram</label>
+                                <input type="text"
+                                       class="form-control"
+                                       name="instagram"
+                                       value="{{ old('instagram') ?? $data->{'instagram'} }}"
+                                       autocomplete="off"
+                                       title="">
+                            </div>
+
+
                             <!------ phone ------>
                             <div class="form-group">
                                 <label>Номер телефоны (пищите через запятой)</label>

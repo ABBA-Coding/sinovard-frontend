@@ -18,6 +18,8 @@ class CreateProductsTable extends Migration
             $table->foreignId('file_id')->nullable()->constrained('files')->onDelete('set null');
             $table->foreignId('category_id')->nullable()->constrained('categories')->onDelete('set null');
             $table->string('vendor_code')->nullable();
+            $table->string('ref_id')->nullable()->unique();
+            $table->string('name', 255)->nullable();
             $table->double('price', 16,2)->default(0);
             $table->double('quantity', 16,2)->default(0);
             $table->string('slug')->nullable();

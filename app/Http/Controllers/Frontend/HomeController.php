@@ -38,7 +38,7 @@ class HomeController extends Controller
         $topProducts = Product::orderBy('created_at', 'desc')->where('top', 1)->limit(13)->get();
         $stocks = Post::where('type', Post::TYPE_STOCK)->get();
         $reviews = Review::orderBy('sort', 'asc')->get();
-        $news = Post::where('type', Post::TYPE_POST)->limit(4)->get();
+        $news = Post::where('type', Post::TYPE_POST)->orderBy('published_at', 'desc')->limit(4)->get();
         $faqs = Faq::all();
 
         return view('frontend.pages.index', compact(
@@ -72,7 +72,8 @@ class HomeController extends Controller
             ->when($category instanceof Category, function ($q) use ($category) {
                 $q->where('category_id', $category->id);
             })
-            ->get();
+            ->where('status', 1)
+            ->paginate(8);
 
         return view('frontend.pages.catalog', compact('banners', 'category', 'products'));
     }
@@ -91,7 +92,7 @@ class HomeController extends Controller
 
     public function news()
     {
-        $news = Post::where('type', Post::TYPE_POST)->get();
+        $news = Post::where('type', Post::TYPE_POST)->paginate(8);
         return view('frontend.pages.news', compact('news'));
     }
 

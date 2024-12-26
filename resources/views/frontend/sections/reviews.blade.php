@@ -8,7 +8,7 @@
             <div class="swiper swiper-5">
                 <div class="swiper-wrapper">
                     @foreach($reviews as $review)
-                        <div class="swiper-slider">
+                        <div class="swiper-slide">
                             <div class="reviews-card">
                                 <div class="reviews-card__img">
                                     <img src="{{ $review->getFile('file', 'low') }}" alt="" />

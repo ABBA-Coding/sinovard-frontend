@@ -19,9 +19,14 @@
     <link rel="icon" type="image/ico" href="/frontend/favicon.svg" sizes="32x32">
     <link rel="stylesheet" href="/frontend/styles/vendor.css">
     <link rel="stylesheet" href="/frontend/styles/main.css">
+    <link rel="stylesheet" href="/frontend/styles/custom.css">
     <style>
         .pre-line {
             white-space: pre-line;
+        }
+        .services-card__num {
+            min-width: 40px;
+            margin-right: 10px;
         }
     </style>
     @yield('styles')
@@ -43,10 +48,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
-@include('frontend.sections.basket-modal')
-
 <script>
-
     function ajaxErrorMessage(error) {
         if (typeof error.responseJSON === 'object' && error.responseJSON !== null) {
 
@@ -90,13 +92,13 @@
         }
     }
 
-    let disabled = false;
+    let formDisabled = false;
 
     $('.feedbackForm').on('submit', function (e) {
         e.preventDefault();
 
-        if (!disabled) {
-            disabled = true;
+        if (!formDisabled) {
+            formDisabled = true;
             let method = $(this).attr('method');
             let action = $(this).attr('action');
             let form = $(this);
@@ -127,7 +129,7 @@
                     form.trigger("reset");
                 },
                 complete: function () {
-                    disabled = false
+                    formDisabled = false
                 }
             })
         }
@@ -135,7 +137,8 @@
 
 </script>
 
-@yield('js')
+@include('frontend.sections.basket-modal')
+
 
 </body>
 </html>

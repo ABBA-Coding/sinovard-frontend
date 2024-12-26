@@ -108,15 +108,7 @@
                             </form>
                         </div>
                         <div class="contact-section__map">
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11986.687018902076!2d69.27582199999999!3d41.316003900000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b31800bc0e5%3A0x19bce56374482eb!2z0JDQsdC00YPQu9C70LAg0JrQvtC00LjRgNC4!5e0!3m2!1sru!2s!4v1726486666900!5m2!1sru!2s"
-                                width="100%"
-                                height="450"
-                                style="border: 0"
-                                allowfullscreen=""
-                                loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade"
-                            ></iframe>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d24019.19565802532!2d69.1520685!3d41.191264!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae612de33bf27b%3A0x137f125e9a298359!2sSinoward!5e0!3m2!1sru!2s!4v1735030803846!5m2!1sru!2s" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                     </div>
                 </div>

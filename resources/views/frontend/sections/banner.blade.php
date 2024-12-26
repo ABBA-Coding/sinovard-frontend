@@ -11,16 +11,18 @@
                                     src="{{ $banner->getFile('file', 'original') }}"
                                     alt=""
                                 />
-                                <div class="banner-section__title">
+                                <div class="banner-section__title" style="max-width: 900px">
                                     {{ $banner->translate->title }}
                                 </div>
-                                <div class="banner-section__text">
+                                <div class="banner-section__text" style="max-width: 700px">
                                     {{ $banner->translate->description }}
                                 </div>
                                 @if(!empty($banner->translate->link))
-                                    <button class="btn btn-white">
-                                        <span>{{ __('static.Перейти в каталог') }}</span>
-                                    </button>
+                                    <div class="d-inline-block">
+                                        <a href="{{ $banner->translate->link }}" class="btn btn-white">
+                                            <span>{{ !empty($banner->translate->btn_text) ? $banner->translate->btn_text : __('static.Перейти в каталог') }}</span>
+                                        </a>
+                                    </div>
                                 @endif
                             </div>
                         </div>

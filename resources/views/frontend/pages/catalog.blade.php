@@ -116,7 +116,7 @@
                         </div>
                     </div>
                 </div>
-                @component('frontend.components.pagination') @endcomponent
+                {{ $products->appends(request()->query())->links('frontend.components.pagination') }}
             </div>
         </section>
 

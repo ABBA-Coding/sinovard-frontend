@@ -13,7 +13,7 @@ $(document).ready(function () {
     }
 
     if (document.querySelector(".swiper-1")) {
-        const swiper = new Swiper(".swiper-1", {
+        new Swiper(".swiper-1", {
             loop: true,
             spaceBetween: 20,
 
@@ -29,7 +29,7 @@ $(document).ready(function () {
     }
 
     if (document.querySelector(".swiper-2")) {
-        const swiper = new Swiper(" .swiper-2", {
+        new Swiper(" .swiper-2", {
             loop: true,
             slidesPerView: 4,
             spaceBetween: 15,
@@ -70,7 +70,7 @@ $(document).ready(function () {
         });
     }
     if (document.querySelector(".swiper-3")) {
-        const swiper = new Swiper(" .swiper-3", {
+        new Swiper(" .swiper-3", {
             loop: true,
             slidesPerView: 4,
             spaceBetween: 10,
@@ -111,7 +111,7 @@ $(document).ready(function () {
         });
     }
     if (document.querySelector(".swiper-4")) {
-        const swiper = new Swiper(" .swiper-4", {
+        new Swiper(" .swiper-4", {
             loop: true,
             slidesPerView: 4,
             spaceBetween: 15,
@@ -152,7 +152,7 @@ $(document).ready(function () {
         });
     }
     if (document.querySelector(".swiper-5")) {
-        const swiper = new Swiper(" .swiper-5", {
+        new Swiper(" .swiper-5", {
             loop: true,
             direction: "vertical",
             slidesPerView: 1,
@@ -165,7 +165,7 @@ $(document).ready(function () {
         });
     }
     if (document.querySelector(".swiper-6")) {
-        const swiper = new Swiper(" .swiper-6", {
+        new Swiper(" .swiper-6", {
             loop: true,
             slidesPerView: 1.4,
             spaceBetween: 20,
@@ -213,7 +213,7 @@ $(document).ready(function () {
     }
 
     if (document.querySelector(".swiper-7")) {
-        const swiper = new Swiper(".swiper-7", {
+        new Swiper(".swiper-7", {
             loop: true,
             slidesPerView: 3,
             spaceBetween: 20,
@@ -257,7 +257,7 @@ $(document).ready(function () {
     }
 
     if (document.querySelector(".swiper-8")) {
-        const swiper = new Swiper(".swiper-8", {
+        new Swiper(".swiper-8", {
             loop: true,
             slidesPerView: 4,
             spaceBetween: 15,

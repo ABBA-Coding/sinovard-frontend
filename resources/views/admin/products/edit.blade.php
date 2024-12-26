@@ -52,23 +52,43 @@
                             <label>Характеристики</label>
                             <table class="table table-bordered">
                                 <tbody>
-                                @foreach($data->translate->characteristics as $i => $characteristic)
-                                    <tr>
-                                        <td style="vertical-align: top; width: 60px">
-                                            {{ $i + 1 }}
-                                        </td>
-                                        <td style="vertical-align: top">
-                                            <div class="form-group mb-0">
-                                                <input class="form-control" type="text" value="{{ $characteristic[0] }}" name="characteristics[{{$i}}][0]">
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="form-group mb-0">
-                                                <textarea class="form-control" name="characteristics[{{$i}}][1]" style="min-height: 60px">{{ $characteristic[1] }}</textarea>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                @endforeach
+                                @if($data->translate->characteristic)
+                                    @foreach($data->translate->characteristics as $i => $characteristic)
+                                        <tr>
+                                            <td style="vertical-align: top; width: 60px">
+                                                {{ $i + 1 }}
+                                            </td>
+                                            <td style="vertical-align: top">
+                                                <div class="form-group mb-0">
+                                                    <input class="form-control" type="text" value="{{ $characteristic[0] }}" name="characteristics[{{$i}}][0]">
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-group mb-0">
+                                                    <textarea class="form-control" name="characteristics[{{$i}}][1]" style="min-height: 60px">{{ $characteristic[1] }}</textarea>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                @else
+                                    @for($i=0;$i<10;$i++)
+                                        <tr>
+                                            <td style="vertical-align: top; width: 60px">
+                                                {{ $i + 1 }}
+                                            </td>
+                                            <td style="vertical-align: top">
+                                                <div class="form-group mb-0">
+                                                    <input class="form-control" type="text" name="characteristics[{{$i}}][0]">
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-group mb-0">
+                                                    <textarea class="form-control" name="characteristics[{{$i}}][1]" style="min-height: 60px"></textarea>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    @endfor
+                                @endif
                                 </tbody>
                             </table>
                         </div>

@@ -56,7 +56,7 @@
                                                 <img src="{{ $item->getFile('file', 'small') }}" alt="">
                                             </td>
                                             <td>
-                                                {{ $item->translate->name }}
+                                                {{ $item->translate->name ?? $item->name }}
                                             </td>
                                             <td>
                                                 {{ $item->vendor_code }}
