@@ -1,4 +1,4 @@
-<section class="sec-padding reviews-section">
+<section class="sec-padding reviews-section" id="reviews-section">
     <div class="container">
         <div class="m-box">
             <div class="m-title">{{ __('static.Отзывы') }}</div>

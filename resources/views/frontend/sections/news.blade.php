@@ -1,4 +1,4 @@
-<section class="sec-padding --news-cards">
+<section class="sec-padding --news-cards" id="news-sections">
     <div class="container">
         <div class="m-box">
             <div class="m-title">{{ __('static.Новости') }}</div>

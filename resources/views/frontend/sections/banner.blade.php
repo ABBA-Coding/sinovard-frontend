@@ -20,7 +20,7 @@
                                 @if(!empty($banner->translate->link))
                                     <div class="d-inline-block">
                                         <a href="{{ $banner->translate->link }}" class="btn btn-white">
-                                            <span>{{ !empty($banner->translate->btn_text) ? $banner->translate->btn_text : __('static.Перейти в каталог') }}</span>
+                                            <span>{{ !empty($banner->translate->btn_text) ? $banner->translate->btn_text : __('static.Перейти') }}</span>
                                         </a>
                                     </div>
                                 @endif

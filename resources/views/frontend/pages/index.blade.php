@@ -8,7 +8,7 @@
         @include('frontend.sections.top-products')
         @include('frontend.sections.brands')
         @include('frontend.sections.advantages')
-        <div class="sec-padding">
+        <div class="sec-padding" id="stocks-section">
             <div class="container">
                 <div class="m-box">
                     <div class="m-title">{{ __('static.Наши акции') }}</div>

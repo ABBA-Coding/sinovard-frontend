@@ -1,4 +1,4 @@
-<section class="form-section">
+<section class="form-section" id="form-section">
     <div class="container">
         <div class="form-section__wrapper">
             <div class="form-section__info">
@@ -9,9 +9,7 @@
                     <h2 class="form-section__title">Sinoward</h2>
                 </div>
                 <div class="form-section__text">
-                    Наша цель — обеспечить быструю доставку, отличное обслуживание и профессиональную поддержку, помогая
-                    каждому клиенту найти нужную деталь для его автомобиля. Мы ценим доверие наших клиентов и строим
-                    долгосрочные отношения, ориентируясь на их потребности и удовлетворение.
+                    {{ __('static.Наша цель —') }}
                 </div>
             </div>
 

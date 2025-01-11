@@ -17,7 +17,7 @@ class IndexController
             'data' => 'required|array',
             'data.*.ref_id' => 'required|string',
             'data.*.name' => 'required|string',
-            'data.*.price' => 'nullable|integer',
+            'data.*.price' => 'nullable|numeric',
         ]);
 
         DB::beginTransaction();
@@ -38,7 +38,7 @@ class IndexController
             'data' => 'required|array',
             'data.*.ref_id' => 'required|string',
             'data.*.name' => 'required|string',
-            'data.*.price' => 'nullable|integer',
+            'data.*.price' => 'nullable|numeric',
         ]);
 
         DB::beginTransaction();

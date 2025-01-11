@@ -1,5 +1,5 @@
 @if(count($categories))
-<section class="sec-padding categories-section">
+<section class="sec-padding categories-section" id="categories-section">
     <div class="container">
         <div class="m-box">
             <div class="m-title">{{ __('static.Категории') }}</div>

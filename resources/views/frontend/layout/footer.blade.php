@@ -2,77 +2,70 @@
     <div class="footer-top">
         <div class="container">
             <div class="footer-top__wrapper">
-                <div class="footer-top__title">Навигация по сайту</div>
+                <div class="footer-top__title">{{ __('static.Навигация по сайту') }}</div>
                 <div class="footer-top__inner">
                     <ul class="footer-top__list">
-                        <li class="footer-top__type">Главная</li>
+                        <li class="footer-top__type">{{ __('static.Главная') }}</li>
                         <li class="footer-top__link">
-                            <a href="#!">Приветствие</a>
+                            <a href="{{ route('home') }}">{{ __('static.Приветствие') }}</a>
                         </li>
                         <li class="footer-top__link">
-                            <a href="#!">Категории</a>
+                            <a href="{{ route('home', '#categories-section') }}">{{ __('static.Категории') }}</a>
                         </li>
                         <li class="footer-top__link">
-                            <a href="#!">Топ-продаж</a>
+                            <a href="{{ route('home', '#top-products-section') }}">{{ __('static.Топ-продаж') }}</a>
                         </li>
                         <li class="footer-top__link">
-                            <a href="#!">Преимущества</a>
+                            <a href="{{ route('home', '#services-section') }}">{{ __('static.Преимущества') }}</a>
                         </li>
                         <li class="footer-top__link">
-                            <a href="#!">Акции</a>
+                            <a href="{{ route('home', '#stocks-section') }}">{{ __('static.Акции') }}</a>
                         </li>
                         <li class="footer-top__link">
-                            <a href="#!">О нас</a>
+                            <a href="{{ route('home', '#about-section') }}">{{ __('static.О нас') }}</a>
                         </li>
                         <li class="footer-top__link">
-                            <a href="#!">Отзывы</a>
+                            <a href="{{ route('home', '#reviews-section') }}">{{ __('static.Отзывы') }}</a>
                         </li>
                         <li class="footer-top__link">
-                            <a href="#!">Новости</a>
-                        </li>
-                    </ul>
-
-                    <ul class="footer-top__list">
-                        <li class="footer-top__type">Каталог</li>
-                        <li class="footer-top__link">
-                            <a href="#!">Каталог продукции</a>
+                            <a href="{{ route('home', '#news-section') }}">{{ __('static.Новости') }}</a>
                         </li>
                     </ul>
 
                     <ul class="footer-top__list">
-                        <li class="footer-top__type">О нас</li>
+                        <li class="footer-top__type">{{ __('static.Каталог') }}</li>
                         <li class="footer-top__link">
-                            <a href="#!">Представление</a>
-                        </li>
-                        <li class="footer-top__link">
-                            <a href="#!">Информация</a>
-                        </li>
-                        <li class="footer-top__link">
-                            <a href="#!">Заявка</a>
+                            <a href="{{ route('catalog') }}">{{ __('static.Каталог продукции') }}</a>
                         </li>
                     </ul>
 
                     <ul class="footer-top__list">
-                        <li class="footer-top__type">Бренды</li>
+                        <li class="footer-top__type">{{ __('static.О нас') }}</li>
                         <li class="footer-top__link">
-                            <a href="#!">Бренды</a>
+                            <a href="{{ route('about') }}">{{ __('static.Представление') }}</a>
+                        </li>
+                        <li class="footer-top__link">
+                            <a href="{{ route('about', '#info-section') }}">{{ __('static.Информация') }}</a>
+                        </li>
+                        <li class="footer-top__link">
+                            <a href="{{ route('about', '#form-section') }}">{{ __('static.Заявка') }}</a>
                         </li>
                     </ul>
 
                     <ul class="footer-top__list">
-                        <li class="footer-top__type">Новости</li>
+                        <li class="footer-top__type">{{__('static.Новости')}}</li>
                         <li class="footer-top__link">
-                            <a href="#!">Новости</a>
+                            <a href="{{ route('news') }}">{{ __('static.Новости') }}</a>
                         </li>
                     </ul>
 
                     <ul class="footer-top__list">
-                        <li class="footer-top__type">Контакты</li>
+                        <li class="footer-top__type">{{__('static.Контакты')}}</li>
                         <li class="footer-top__link">
-                            <a href="#!">Контакты</a>
+                            <a href="{{ route('contacts') }}">{{ __('static.Контакты') }}</a>
                         </li>
                         <li class="footer-top__link">
-                            <a href="#!">Заявка</a>
+                            <a href="{{ route('contacts') }}">{{ __('static.Заявка') }}</a>
                         </li>
                     </ul>
                 </div>
@@ -82,8 +75,8 @@
     <div class="footer-bootom">
         <div class="container">
             <div class="footer-bootom__wrapper">
-                <div class="footer-bootom__description">SINOWARD ©2024</div>
-                <div class="footer-bootom__text">Все права защищены</div>
+                <div class="footer-bootom__description">SINOWARD ©2025</div>
+                <div class="footer-bootom__text">{{ __('static.Все права защищены') }}</div>
                 <div class="footer-bootom__text">Made by ABBA</div>
             </div>
         </div>
