@@ -24,7 +24,9 @@
                     </li>
                     <li class="header-menu__item {{ request()->routeIs('catalog') ? 'active' : '' }}">
                         <a href="{{ route('catalog') }}" class="header-menu__link">{{ __('static.Каталог') }}</a>
-                        @component('frontend.components.dropdown') @endcomponent
+                        @if(isset($categories) && count($categories) > 0)
+                            @component('frontend.components.dropdown') @endcomponent
+                        @endif
                     </li>
                     <li class="header-menu__item {{ request()->routeIs('about') ? 'active' : '' }}">
                         <a href="{{ route('about') }}" class="header-menu__link">{{ __('static.Компания') }}</a>

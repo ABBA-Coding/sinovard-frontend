@@ -103,7 +103,7 @@
                                         class="contact-form__input"/>
                                 </div>
                                 <button type="submit" class="btn btn-main">
-                                    <span>Связаться</span>
+                                    <span>{{ __('static.Связаться') }}</span>
                                 </button>
                             </form>
                         </div>

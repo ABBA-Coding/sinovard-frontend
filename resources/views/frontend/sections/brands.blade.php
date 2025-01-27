@@ -8,29 +8,43 @@
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <div class="brand-card">
-                            <div class="brand-card__img">
-                                <img src="/frontend/images/icon/brand1.svg" alt="" />
+                            <div class="brand-card__img" style="max-width: none">
+                                <img src="/frontend/images/brands/b1.png" alt="" />
                             </div>
                         </div>
                     </div>
                     <div class="swiper-slide">
                         <div class="brand-card">
-                            <div class="brand-card__img">
-                                <img src="/frontend/images/icon/brand2.svg" alt="" />
+                            <div class="brand-card__img" style="max-width: none">
+                                <img src="/frontend/images/brands/b2.png" alt="" />
                             </div>
                         </div>
                     </div>
                     <div class="swiper-slide">
                         <div class="brand-card">
-                            <div class="brand-card__img">
-                                <img src="/frontend/images/icon/brand3.svg" alt="" />
+                            <div class="brand-card__img" style="max-width: none">
+                                <img src="/frontend/images/brands/b3.png" alt="" />
                             </div>
                         </div>
                     </div>
                     <div class="swiper-slide">
                         <div class="brand-card">
-                            <div class="brand-card__img">
-                                <img src="/frontend/images/icon/brand4.svg" alt="" />
+                            <div class="brand-card__img" style="max-width: none">
+                                <img src="/frontend/images/brands/b44.png" alt="" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="brand-card">
+                            <div class="brand-card__img" style="max-width: none">
+                                <img src="/frontend/images/brands/b5.png" alt="" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="brand-card">
+                            <div class="brand-card__img" style="max-width: none">
+                                <img src="/frontend/images/brands/b6.png" alt="" />
                             </div>
                         </div>
                     </div>

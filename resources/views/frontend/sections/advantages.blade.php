@@ -8,7 +8,7 @@
                 </div>
                 <div class="d-inline-block">
                     <a href="{{ route('about') }}" class="btn btn-outline">
-                        <span>{{ __('static.Learn more') }}</span>
+                        <span>{{ __('static.Узнать больше') }}</span>
                     </a>
                 </div>
             </div>

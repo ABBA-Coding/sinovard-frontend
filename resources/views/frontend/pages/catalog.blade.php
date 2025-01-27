@@ -17,13 +17,9 @@
                     </div>
 
                     <div class="catalog-info__wrapper">
-                        <h3 class="catalog-info__title">Каталог</h3>
+                        <h3 class="catalog-info__title">{{ __('static.Каталог') }}</h3>
                         <div class="catalog-info__text">
-                            Добро пожаловать в наш каталог запчастей для траков! Здесь вы
-                            найдете обширный выбор деталей для грузовых автомобилей, подобранных
-                            с учетом самых высоких стандартов качества. Независимо от того,
-                            какой бренд или модель трака вам требуется, у нас есть все
-                            необходимое для поддержания вашего автопарка в отличном состоянии
+                            {{ __('static.catalog-text') }}
                         </div>
                     </div>
                 </div>
@@ -36,7 +32,7 @@
                     <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
                         <div class="catalog-left__catalog">
                             <img src="/frontend/images/icon/catalogBurger.svg" alt="" />
-                            <span>Каталог</span>
+                            <span>{{ __('static.Каталог') }}</span>
                         </div>
                     </div>
                     <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-9">
@@ -48,13 +44,13 @@
                             </ul>
 
                             <form class="catalog-filter__form">
-                                <div class="btn btn-main catalog-filter__btn">
+                                <div class="btn btn-main catalog-filter__btn" style="cursor: pointer">
                                     <img src="/frontend/images/icon/searchWhite.svg" alt="" />
                                     <span>{{ __('static.Поиск') }}</span>
                                 </div>
                                 <div class="catalog-filter__search">
-                                    <input type="text" class="catalog-filter__input" />
-                                    <div class="catalog-filter__box">
+                                    <input type="text" class="catalog-filter__input" data-action="{{ request('url') }}"/>
+                                    <div class="catalog-filter__box" style="cursor: pointer">
                                         <img src="/frontend/images/icon/searchBlue.svg" alt="" />
                                         <span>{{ __('static.Поиск') }}</span>
                                     </div>
@@ -95,11 +91,7 @@
                                     <div class="catalog-left__info">
                                         <div class="catalog-left__title">Sinoward</div>
                                         <div class="catalog-left__text">
-                                            Lorem Ipsum has been the industry's standard dummy text ever
-                                            since the 1500s, when an unknown Lorem Ipsum has been the
-                                            industry's standard Lorem Ipsum has been the industry's
-                                            standard dummy text ever since the 1500s, when an unknown
-                                            Lorem Ipsum has been the industry's standard
+                                            {{ __('static.Наша компания —') }}
                                         </div>
                                     </div>
                                 </div>

@@ -23,6 +23,25 @@ class ProductController extends CrudController
 
     public $folderName = 'products';
 
+    public function index(Request $request)
+    {
+        $query = $request->get('_query');
+
+        $data = $this->modelClass::when(!empty($query), function ($q) use ($query) {
+            $q->where('name', 'ilike', '%' . $query . '%');
+        })->orderBy('created_at', 'DESC')->paginate(15);
+
+        if ($request->ajax()) {
+            $view = view('admin.products.result', compact('data'))->render();
+
+            return response()->json([
+                'products_view' => $view,
+            ]);
+        }
+
+        return view('admin.'.$this->folderName.'.index', compact('data'));
+    }
+
     public function create(Request $request)
     {
         $data = $this->modelClass;

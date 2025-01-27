@@ -457,6 +457,7 @@ $(document).ready(function () {
             e.preventDefault();
 
             const query = searchInput.val();
+
             if (query) {
                 window.location = searchInput.attr('data-action') + '?query='+query
             } else {

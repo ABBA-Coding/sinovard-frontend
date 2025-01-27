@@ -44,8 +44,15 @@
                                     <th class="w-100p">статус</th>
                                     <th class="w-200p">действие</th>
                                 </tr>
+                                <tr>
+                                    <th colspan="10">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" id="searchInput" placeholder="Поиск">
+                                        </div>
+                                    </th>
+                                </tr>
                                 </thead>
-                                <tbody>
+                                <tbody id="result">
                                 @if (count($data) > 0)
                                     @foreach($data as $key => $item)
                                         <tr>
@@ -53,7 +60,7 @@
                                                 {{ ($data->currentpage()-1) * $data->perpage() + $key + 1 }}
                                             </td>
                                             <td>
-                                                <img src="{{ $item->getFile('file', 'small') }}" alt="">
+                                                <img src="{{ $item->getFile('file', 'small', '/admin-panel/favicon.svg') }}" alt="">
                                             </td>
                                             <td>
                                                 {{ $item->translate->name ?? $item->name }}
@@ -112,4 +119,42 @@
             </div>
         </div>
     </div>
+@endsection
+
+
+@section('scripts')
+    <script>
+        // Функция для дебаунса
+        function debounce(func, delay) {
+            let timeout;
+            return function (...args) {
+                clearTimeout(timeout);
+                timeout = setTimeout(() => func.apply(this, args), delay);
+            };
+        }
+
+        const result = $("#result");
+
+        // Логика для обработки ввода
+        $('#searchInput').on(
+            'input',
+            debounce(function () {
+                let query = $(this).val();
+
+                console.log(query);
+
+                $.ajax({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
+                    },
+                    url: '{{ route('admin.products.index') }}',
+                    method: 'GET',
+                    data: { _query: query },
+                    success: function (data) {
+                        result.empty().append(data.products_view);
+                    },
+                });
+            }, 300) // задержка в 300 мс
+        );
+    </script>
 @endsection
