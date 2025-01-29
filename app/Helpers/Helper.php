@@ -22,4 +22,14 @@ class Helper
         $codes = config('env.LOCALES');
         return array_search($langID, $codes);
     }
+
+    public static function getCurrency($currency)
+    {
+        $path = config('currency.path');
+
+        $str = file_get_contents($path.'/'.$currency.'/'.'currency.json');
+        $data = json_decode($str);
+
+        return $data->Rate;
+    }
 }

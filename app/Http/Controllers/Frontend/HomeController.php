@@ -130,18 +130,20 @@ class HomeController extends Controller
 
         $products = [];
         foreach ($data as $item) {
-            $product = Product::where('id', $item['id'])->first();
-            $product->cart_quantity = $item['quantity'];
-            $products[] = $product;
+            if (!empty($item['id'])) {
+                $product = Product::where('id', $item['id'])->first();
+                $product->cart_quantity = $item['quantity'];
+                $products[] = $product;
 
-            $products_sum+=($product->cart_quantity*$product->price);
+                $products_sum+=($product->cart_quantity*$product->amount);
+            }
         }
         $view = view('frontend.components.basket-items', compact('products'))->render();
 
         return response()->json([
             'products_view' => $view,
             'products_count' => count($products),
-            'products_sum' => $products_sum
+            'products_sum' => number_format(round($products_sum), 0,',',' ')
         ]);
     }
 }

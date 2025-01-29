@@ -77,7 +77,7 @@
             <div class="footer-bootom__wrapper">
                 <div class="footer-bootom__description">SINOWARD ©2025</div>
                 <div class="footer-bootom__text">{{ __('static.Все права защищены') }}</div>
-                <div class="footer-bootom__text">Made by ABBA</div>
+                <div class="footer-bootom__text">Made by <a href="https://abba.uz/" class="">ABBA</a></div>
             </div>
         </div>
     </div>

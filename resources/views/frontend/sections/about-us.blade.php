@@ -12,28 +12,20 @@
     </div>
     <div class="about-section__animation">
         <div class="about-section__item">
-            <div class="about-section__item-wrap" style="text-align: center">
-                <div class="about-section__num">20+</div>
-                <div class="about-section__span">{{ __('static.counts.Опыт работы') }}</div>
-            </div>
+            <div class="about-section__num">20+</div>
+            <div class="about-section__span">{{ __('static.counts.Опыт работы') }}</div>
         </div>
         <div class="about-section__item">
-            <div class="about-section__item-wrap" style="text-align: center">
-                <div class="about-section__num">1000+</div>
-                <div class="about-section__span">{{ __('static.counts.Партнеры') }}</div>
-            </div>
+            <div class="about-section__num">1000+</div>
+            <div class="about-section__span">{{ __('static.counts.Партнеры') }}</div>
         </div>
         <div class="about-section__item">
-            <div class="about-section__item-wrap" style="text-align: center">
-                <div class="about-section__num">8</div>
-                <div class="about-section__span">{{ __('static.counts.Персонал') }}</div>
-            </div>
+            <div class="about-section__num">8</div>
+            <div class="about-section__span">{{ __('static.counts.Персонал') }}</div>
         </div>
         <div class="about-section__item">
-            <div class="about-section__item-wrap" style="text-align: center">
-                <div class="about-section__num">4</div>
-                <div class="about-section__span">{{ __('static.counts.Филиалы') }}</div>
-            </div>
+            <div class="about-section__num">4</div>
+            <div class="about-section__span">{{ __('static.counts.Филиалы') }}</div>
         </div>
         <div class="about-section__settings1 about-section__decor">
             <img src="/frontend/images/icon/settings.svg" alt="" />

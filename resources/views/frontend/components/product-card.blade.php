@@ -7,7 +7,7 @@
     </a>
 
     <a href="{{ route('product', ['slug' => $product->slug]) }}" class="product-card__bottom">
-        <div class="product-card__price">@price($product->price) {{ __('static.сум') }}</div>
+        <div class="product-card__price">@price($product->amount) {{ __('static.сум') }}</div>
         <div class="product-card__article">{{ $product->vendor_code }}</div>
         <div class="product-card__text">
             {{ \Illuminate\Support\Str::limit($product->translate->description, 130) }}

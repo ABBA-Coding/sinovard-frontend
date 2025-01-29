@@ -16,7 +16,7 @@
         </div>
 
         <div class="basket-card__right">
-            <div class="basket-card__price">@price($product->price) {{ __('static.сум') }}</div>
+            <div class="basket-card__price">@price($product->amount) {{ __('static.сум') }}</div>
 
             <div class="basket-card__quantity">
                 <button class="basket-card__decr decrementFromBasket" data-id="{{ $product->id }}">-</button>

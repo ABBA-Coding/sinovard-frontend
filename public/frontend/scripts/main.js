@@ -154,7 +154,7 @@ $(document).ready(function () {
     if (document.querySelector(".swiper-5")) {
         new Swiper(" .swiper-5", {
             loop: true,
-            direction: "vertical",
+            // direction: "vertical",
             slidesPerView: 1,
             spaceBetween: 20,
 
@@ -422,7 +422,27 @@ $(document).ready(function () {
         const searchWrapper = $('.header-info__search');
         const searchBtn = searchWrapper.find('.header-info__btn');
         const searchInputWrap = searchWrapper.find('.header-info__box');
-        const searchInput = searchWrapper.find('input')
+        const searchInput = searchWrapper.find('input');
+
+
+        searchInput.keydown(function(event) {
+            if (event.key === "Enter") {
+                event.preventDefault(); // Останавливаем стандартное действие
+
+                if (searchWrapper.hasClass('open')) {
+                    const query = searchInput.val();
+                    if (query) {
+                        window.location = searchInput.attr('data-action') + '?query=' + query
+                    } else {
+                        searchInputWrap.removeClass('open');
+                        searchWrapper.removeClass('open');
+                    }
+                } else {
+                    searchInputWrap.addClass('open');
+                    searchWrapper.addClass('open');
+                }
+            }
+        });
 
         searchBtn.on('click', function (e) {
             e.preventDefault();
@@ -438,7 +458,6 @@ $(document).ready(function () {
                 searchInputWrap.addClass('open');
                 searchWrapper.addClass('open');
             }
-
         })
     }
 
@@ -465,6 +484,17 @@ $(document).ready(function () {
             }
         })
     }
+
+    let offer = localStorage.getItem('offer');
+
+    if (!offer) {
+        $('.header-offer').removeClass('d-none');
+    }
+
+    $('.header-offer__close').on('click', function () {
+        $('.header-offer').hide();
+        localStorage.setItem('offer', '1')
+    });
 
     AOS.init();
 });

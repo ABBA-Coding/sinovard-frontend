@@ -15,42 +15,44 @@
             </div>
         </section>
 
-        <section class="sec-padding info-section" id="info-section">
-            <div class="container">
-                <div class="row justify-content-between">
-                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-6">
-                        <div class="info-section__info">
-                            <div class="info-section__top">
-                                <div class="info-section__title">{{ __('static.Наши ценности') }}</div>
-                                <div class="info-section__text">
-                                    {{ __('static.values-text') }}
+        <div id="info-section">
+            <section class="info-section">
+                <div class="container">
+                    <div class="info-section__wrap">
+                        <div class="info-section__left">
+                            <div class="info-section__info">
+                                <div class="info-section__top">
+                                    <div class="info-section__title">{{ __('static.Наши ценности') }}</div>
+                                    <div class="info-section__text">
+                                        {{ __('static.values-text') }}
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="info-section__card">
-                                <div class="info-section__subtitle">{{ __('static.Качество') }}</div>
-                                <div class="info-section__description">
-                                    {{ __('static.quality-text') }}
+                                <div class="info-section__card">
+                                    <div class="info-section__subtitle">{{ __('static.Качество') }}</div>
+                                    <div class="info-section__description">
+                                        {{ __('static.quality-text') }}
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-5">
-                        <div class="info-section__animation">
-                            <div class="info-section__item --decor1">
-                                <img src="/frontend/images/png/aboutDecor1.png" alt="" />
-                            </div>
-                            <div class="info-section__item --decor2">
-                                <img src="/frontend/images/png/aboutDecor2.png" alt="" />
-                            </div>
-                            <div class="info-section__item --decor3">
-                                <img src="/frontend/images/png/aboutDecor3.png" alt="" />
+                        <div class="info-section__right">
+                            <div class="info-section__animation">
+                                <div class="info-section__item --decor1">
+                                    <div class="icon"></div>
+                                </div>
+                                <div class="info-section__item --decor2">
+                                    <div class="icon"></div>
+                                </div>
+                                <div class="info-section__item --decor3">
+                                    <div class="icon"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
 
         <section class="sec-padding portners-section">
             <video
@@ -158,4 +160,25 @@
         @include('frontend.sections.form')
     </div>
 
+@endsection
+
+
+@section('scripts')
+    <script>
+        let stickyDiv = document.querySelector(".info-section"),
+            stickyDivParent = document.getElementById('info-section'),
+            stickyOffset = stickyDiv.offsetTop;
+
+        window.onload = function () {
+            stickyDivParent.style.height = stickyDiv.offsetHeight+'px'
+        };
+
+        window.onscroll = function () {
+            if (window.pageYOffset >= stickyOffset && window.pageYOffset <= stickyOffset+stickyDiv.offsetHeight) {
+                body.style.overflowY = "hidden";
+            } else {
+                body.style.overflowY = "auto";
+            }
+        };
+    </script>
 @endsection

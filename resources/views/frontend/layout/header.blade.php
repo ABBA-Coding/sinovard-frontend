@@ -1,5 +1,5 @@
 <header class="header">
-    <div class="header-offer">
+    <div class="header-offer d-none">
         <div class="container">
             <div class="header-offer__wrapper">
                 <div class="header-offer__text">

@@ -56,7 +56,7 @@ class Feedback extends Model
             if (!empty($apiToken) && !empty($chatId)) {
                 $url = "https://api.telegram.org/bot$apiToken/sendMessage";
 
-                $text = "<strong>zim-zim.uz Обратный связь</strong> \n Имя: {$model->name} \n Телефон: <a href='tel:$phone'>{$model->phone}</a> \n Сообщение: {$model->message} \n";
+                $text = "<strong>sinoward.uz Обратный связь</strong> \n Имя: {$model->name} \n Телефон: <a href='tel:$phone'>{$model->phone}</a> \n Сообщение: {$model->message} \n";
 
                 $headers = [
                     'Accept' => 'application/json',

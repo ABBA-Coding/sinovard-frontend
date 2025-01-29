@@ -20,6 +20,8 @@ class Product extends Model
 
     protected $with = ['translate', 'category'];
 
+    protected $appends = ['amount'];
+
     public static function rules()
     {
         return [
@@ -62,5 +64,10 @@ class Product extends Model
     public function setPriceAttribute($value)
     {
         $this->attributes['price'] = $value ?? 0;
+    }
+
+    public function getAmountAttribute()
+    {
+        return ($this->price * Helper::getCurrency('USD'));
     }
 }
