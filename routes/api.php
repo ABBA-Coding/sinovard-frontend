@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 --------------------------------------------------------------------------------*/
 Route::prefix('v1')->group(function () {
     Route::prefix('integration')->group(function () {
-        Route::middleware([])->group(function () {
+        Route::middleware(['basicAuth'])->group(function () {
             Route::post('products', 'Api\v1\Integration\IndexController@products');
             Route::post('products-update', 'Api\v1\Integration\IndexController@productsUpdate');
         });

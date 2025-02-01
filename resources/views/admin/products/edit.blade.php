@@ -36,7 +36,7 @@
                                 <input type="text"
                                        name="name"
                                        class="form-control"
-                                       value="{{ old('name') ?? @$data->translate->name }}"
+                                       value="{{ old('name') ?? ($data->translate->name ?? $data->name)  }}"
                                        autocomplete="off"
                                        title="">
                             </div>
@@ -100,6 +100,10 @@
                         <div class="card-body">
                             <div id="f1" class="fm-field"> <x-filemanager-field name="file_id" label="Фото" id="f1" value="{{ $data->file_id }}"></x-filemanager-field> </div>
 
+                            <div class="form-group">
+                                <a class="btn-link" href="{{ route('admin.product-photos.index', ['product_id' => $data->id]) }}">Галерея ({{ count($data->photos) }})</a>
+                            </div>
+
                             <!------ category ------>
                             <div class="form-group">
                                 <label>Категория</label>
@@ -107,6 +111,17 @@
                                     <option value="0">Не выбрано</option>
                                     @foreach($categories as $category)
                                         <option value="{{ $category->id }}" {{ $category->id == $data->category_id ? 'selected' : '' }}>{{ $category->name_ru }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+
+                            <!------ brand ------>
+                            <div class="form-group">
+                                <label>Бренд</label>
+                                <select name="brand_id" class="select2">
+                                    <option value="0">Не выбрано</option>
+                                    @foreach($brands as $brand)
+                                        <option value="{{ $brand->id }}" {{ $brand->id == $data->brand_id ? 'selected' : '' }}>{{ $brand->name_ru }}</option>
                                     @endforeach
                                 </select>
                             </div>

@@ -67,6 +67,7 @@ Route::namespace('Frontend')
             Route::get('/get-basket-items', 'HomeController@getBasketItems')->name('get-basket-items');
         });
         Route::post('/feedback', 'HomeController@feedback')->name('feedback');
+        Route::post('/order', 'HomeController@order')->name('order');
     });
 
 // Admin group
@@ -280,6 +281,24 @@ Route::prefix('admin/categories')->namespace('Admin')->group(function () {
 });
 /*--------------------------------------------------------------------------------
     Category ROUTES  => END
+--------------------------------------------------------------------------------*/
+
+/*--------------------------------------------------------------------------------
+    Brand ROUTES  => START
+--------------------------------------------------------------------------------*/
+Route::prefix('admin/brands')->namespace('Admin')->group(function () {
+    Route::middleware(['admin'])->group(function () {
+        Route::get('/', 'BrandController@index')->name('admin.brands.index');
+        Route::get('/create', 'BrandController@create')->name('admin.brands.create');
+        Route::post('/', 'BrandController@store')->name('admin.brands.store');
+        Route::get('/{id}/edit', 'BrandController@edit')->name('admin.brands.edit');
+        Route::post('/nestable', 'BrandController@nestable')->name('admin.brands.nestable');
+        Route::post('/{id}', 'BrandController@update')->name('admin.brands.update');
+        Route::delete('/{id}', 'BrandController@destroy')->name('admin.brands.destroy');
+    });
+});
+/*--------------------------------------------------------------------------------
+    Brand ROUTES  => END
 --------------------------------------------------------------------------------*/
 
 /*--------------------------------------------------------------------------------

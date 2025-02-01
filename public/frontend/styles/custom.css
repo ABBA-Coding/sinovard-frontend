@@ -1,3 +1,76 @@
 .reviews-section .swiper-5 {
     height: auto!important;
 }
+
+.order-modal {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: none;
+    z-index: 9999;
+}
+.order-modal__overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    opacity: 0.8;
+}
+.order-modal__wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.order-modal__form {
+    background-color: #e3e3e3;
+    padding: 25px;
+    border-radius: 15px;
+    z-index: 3;
+    position: relative;
+    width: 100%;
+    max-width: 450px;
+}
+.order-modal__close {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    background-image: url('/frontend/images/icon/Modalcancel.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 35px;
+}
+.order-modal__form .form-form__title {
+    margin-bottom: 20px;
+}
+
+.catalog-filter__link {
+    background-image: url(/frontend/images/icon/Modalcancel.svg);
+    background-position: right 10px center;
+    background-size: 15px;
+    background-repeat: no-repeat;
+    padding-right: 30px;
+}
+
+.header-mobile.--index {
+    background-color: #fff;
+    padding: 5px 0;
+    position: fixed;
+}
+.header-mobile__burger {
+    width: 40px;
+    border-radius: 5px;
+}
+
+@media(max-width: 992px) {
+    .page-content {
+        padding-top: 60px;
+    }
+}

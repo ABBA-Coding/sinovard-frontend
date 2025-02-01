@@ -11,7 +11,7 @@
                         </div>
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item"><a href="{{ route('admin.home') }}"><i class="feather icon-home"></i></a></li>
-                            <li class="breadcrumb-item"><a href="{{ route('admin.products.index') }}">{{$product->translate->name}}</a></li>
+                            <li class="breadcrumb-item"><a href="{{ route('admin.products.edit', ['id' => $product->id]) }}">{{$product->name}}</a></li>
                             <li class="breadcrumb-item"><a href="{{ route('admin.product-photos.index', ['product_id' => $product->id]) }}">Галерея</a></li>
                             <li class="breadcrumb-item"><a href="javascript:">Создать</a></li>
                         </ul>

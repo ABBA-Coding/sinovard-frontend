@@ -27,6 +27,13 @@
                     <div class="card">
                         <div class="card-body">
 
+                            <!------ show_price ------>
+                            <div class="form-group form-check">
+                                <input type="hidden" name="show_price" value="off">
+                                <input type="checkbox" class="form-check-input" id="showPriceLabel" name="show_price" {{ $data->show_price ? 'checked' : '' }}>
+                                <label class="form-check-label" for="showPriceLabel">Показать цену товара</label>
+                            </div>
+
                             <!------ email ------>
                             <div class="form-group">
                                 <label>Почта</label>

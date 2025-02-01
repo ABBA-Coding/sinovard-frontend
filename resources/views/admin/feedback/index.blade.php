@@ -33,8 +33,8 @@
                                 <tr>
                                     <th class="w-50p">№</th>
                                     <th>Имя</th>
-                                    <th>Номер телефона</th>
-                                    <th>Email</th>
+                                    <th>Тип</th>
+                                    <th></th>
                                     <th>Дата создание</th>
                                     <th></th>
                                     <th class="w-200p">действие</th>
@@ -48,13 +48,14 @@
                                                 {{ ($data->currentpage()-1) * $data->perpage() + $key + 1 }}
                                             </td>
                                             <td>
-                                                {{ $item->name }}
-                                            </td>
-                                            <td>
+                                                {{ $item->name }} <br>
                                                 {{ $item->phone ?? '-' }}
                                             </td>
                                             <td>
-                                                {{ $item->email ?? '-' }}
+                                                {{ $item->typeLabel }}
+                                            </td>
+                                            <td>
+                                                <div style="white-space: pre-line">{{ $item->message }}</div>
                                             </td>
                                             <td>
                                                 {{ $item->created_at->format('d.m.Y / H:i:s') }}

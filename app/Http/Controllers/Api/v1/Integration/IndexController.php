@@ -17,12 +17,18 @@ class IndexController
             'data' => 'required|array',
             'data.*.ref_id' => 'required|string',
             'data.*.name' => 'required|string',
+            'data.*.vendor_code' => 'required|string',
             'data.*.price' => 'nullable|numeric',
         ]);
 
         DB::beginTransaction();
         try {
-            DB::table('products')->insert($request->get('data'));
+            $chunks = array_chunk($request->get('data'), 300); // По 300 записей за раз
+
+            foreach ($chunks as $chunk) {
+                DB::table('products')->insert($chunk);
+            }
+
             DB::commit();
         } catch (\Exception $exception) {
             DB::rollBack();
@@ -38,6 +44,7 @@ class IndexController
             'data' => 'required|array',
             'data.*.ref_id' => 'required|string',
             'data.*.name' => 'required|string',
+            'data.*.vendor_code' => 'required|string',
             'data.*.price' => 'nullable|numeric',
         ]);
 
@@ -49,6 +56,7 @@ class IndexController
                 ],[
                     'name' => $item['name'],
                     'price' => $item['price'],
+                    'vendor_code' => $item['vendor_code'],
                 ]);
             }
             DB::commit();

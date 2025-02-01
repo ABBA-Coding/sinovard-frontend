@@ -3,7 +3,7 @@
         <ul class="menu-dropdown__list">
             @foreach($categories as $category)
                 <li>
-                    <a href="{{ route('catalog', ['slug' => $category->slug]) }}" class="menu-dropdown__link">
+                    <a href="{{ route('catalog', ['category' => $category->slug]) }}" class="menu-dropdown__link">
                         <div class="menu-dropdown__box">
                             <div class="menu-dropdown__icon">
                                 <img src="{{ $category->getFile('icon', 'small') }}" alt="" />

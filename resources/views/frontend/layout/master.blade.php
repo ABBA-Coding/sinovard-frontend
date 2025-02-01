@@ -18,7 +18,7 @@
 
     <link rel="icon" type="image/ico" href="/frontend/favicon.svg" sizes="32x32">
     <link rel="stylesheet" href="/frontend/styles/vendor.css">
-    <link rel="stylesheet" href="/frontend/styles/main.css">
+    <link rel="stylesheet" href="/frontend/styles/main.css?v=1">
     <link rel="stylesheet" href="/frontend/styles/custom.css">
     <style>
         .pre-line {
@@ -40,6 +40,7 @@
         @yield('section')
     </div>
     @include('frontend.layout.footer')
+    @include('frontend.components.order-modal')
 </div>
 
 <script src="/frontend/scripts/jQuery-3.4.1.min.js"></script>
@@ -135,9 +136,83 @@
         }
     });
 
+    let orderModal = $('.order-modal'),
+        orderForm = $('.orderForm');
+
+    orderForm.on('submit', function (e) {
+        e.preventDefault();
+        let cart = [];
+
+        if ($('.basket-modal').hasClass('opened')) {
+            cart = (JSON.parse(localStorage.getItem('cart')) || []);
+        } else {
+            const pathArray = window.location.pathname.split('/');
+            const slug = pathArray[pathArray.length - 1];
+
+            cart = [{slug: slug, quantity: 1}]
+        }
+
+        if (!formDisabled) {
+            formDisabled = true;
+            let method = $(this).attr('method');
+            let action = $(this).attr('action');
+            let form = $(this);
+            let form_data = form.serializeArray();
+            // Добавляем новое поле
+            form_data.push({ name: "cart", value: JSON.stringify(cart) });
+
+            $.ajax({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                url: action,
+                method: method,
+                dataType: 'json',
+                data: form_data,
+                success: function (data) {
+                    if (data === 'success') {
+                        Swal.fire({
+                            icon: 'success',
+                            title: '@lang('static.success')',
+                            text: '@lang('static.success_text')',
+                            showConfirmButton: false,
+                            timer: 3000
+                        })
+                    }
+                    form.trigger("reset");
+                    orderModal.fadeOut(300);
+
+                    if ($('.basket-modal').hasClass('opened')) {
+                        localStorage.removeItem('cart');
+                        $('.basket-modal').removeClass('opened');
+                    }
+                },
+                error: function (error) {
+                    ajaxErrorMessage(error);
+                    form.trigger("reset");
+                },
+                complete: function () {
+                    formDisabled = false
+                }
+            })
+        }
+    });
+
+    $('body').on('click', '.showOrderModal', function (e) {
+        $('.order-modal').fadeIn(300);
+    });
+
+    $('.order-modal__close').on('click', function (e) {
+        $('.order-modal').fadeOut(300);
+        let form = $('.order-modal form');
+        form.trigger("reset");
+    });
+
 </script>
 
 @include('frontend.sections.basket-modal')
+
+@yield('scripts')
 
 
 </body>

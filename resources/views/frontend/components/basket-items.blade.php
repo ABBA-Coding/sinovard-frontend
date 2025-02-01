@@ -16,8 +16,9 @@
         </div>
 
         <div class="basket-card__right">
+            @if($setting->show_price == 1)
             <div class="basket-card__price">@price($product->amount) {{ __('static.сум') }}</div>
-
+            @endif
             <div class="basket-card__quantity">
                 <button class="basket-card__decr decrementFromBasket" data-id="{{ $product->id }}">-</button>
                 <div class="basket-card__value">{{ $product->cart_quantity }}</div>

@@ -13,7 +13,7 @@
                                 </div>
                                 <ul class="breadcrumb mb-0">
                                     <li class="breadcrumb-item"><a href="{{ route('admin.home') }}"><i class="feather icon-home"></i></a></li>
-                                    <li class="breadcrumb-item"><a href="{{ route('admin.products.index') }}">{{$product->translate->name}}</a></li>
+                                    <li class="breadcrumb-item"><a href="{{ route('admin.products.edit', ['id' => $product->id]) }}">{{$product->name}}</a></li>
                                     <li class="breadcrumb-item"><a href="javascript:">Галерея</a></li>
                                 </ul>
                             </div>

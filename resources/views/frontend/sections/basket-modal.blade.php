@@ -12,13 +12,15 @@
             <div class="basket-modal__center" id="basketItems"></div>
         </div>
 
-        <div class="basket-modal__bottom">
+        <div class="basket-modal__bottom d-none">
+            @if($setting->show_price == 1)
             <div class="basket-modal__totalprice">
                 <div class="basket-modal__total">{{ __('static.Итого') }}:</div>
                 <div class="basket-modal__price"><span id="basketSum"></span> {{ __('static.сум') }}</div>
             </div>
+            @endif
 
-            <button class="btn btn-main">
+            <button class="btn btn-main showOrderModal">
                 <span>{{ __('static.Заказать') }}</span>
             </button>
 
@@ -59,6 +61,11 @@
                 basketItems.empty().append(data.products_view);
                 basketCount.text('[' + data.products_count + ']');
                 basketSum.text(data.products_sum);
+
+                localStorage.setItem('cart', JSON.stringify(data.actual_cart));
+                if (data.products_count > 0) {
+                    $('.basket-modal__bottom').removeClass('d-none');
+                }
             },
             error: function (error) {
                 console.log(error)
@@ -109,7 +116,7 @@
 
         if (existingProduct) {
             // If the product is already in the cart, update the quantity
-            existingProduct.quantity += 1;
+            existingProduct.quantity = Number(existingProduct.quantity) + 1;
         } else {
             // If the product is not in the cart, add it with quantity 1
             cart.push({id: productId, quantity: 1});
@@ -159,11 +166,13 @@
 
     body.on('click', '.basket-modal__close', function () {
         basketModal.removeClass('opened');
-        basketItems.html('')
+        basketItems.html('');
+        $('.basket-modal__bottom').addClass('d-none');
     });
 
     body.on('click', '.overlay', function () {
         basketModal.removeClass('opened');
-        basketItems.html('')
+        basketItems.html('');
+        $('.basket-modal__bottom').addClass('d-none');
     });
 </script>

@@ -58,15 +58,17 @@
                                     <td>{{ $data->phone ?? '-' }}</td>
                                 </tr>
                                 <tr>
-                                    <td>Email</td>
-                                    <td>{{ $data->email ?? '-' }}</td>
+                                    <td>Тип</td>
+                                    <td>{{ $data->typeLabel }}</td>
                                 </tr>
+                                @if($data->type == \App\Models\Feedback::TYPE_ORDER)
                                 <tr>
-                                    <td style="vertical-align: top">Сообщение</td>
+                                    <td style="vertical-align: top">Товары</td>
                                     <td>
                                         <div style="white-space: pre-line">{{ $data->message ?? '-' }}</div>
                                     </td>
                                 </tr>
+                                @endif
                                 <tr>
                                     <td>Дата создание</td>
                                     <td>{{ $data->created_at->format('d.m.Y / H:i:s') }}</td>

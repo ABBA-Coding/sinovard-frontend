@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Helpers\Helper;
 use App\Http\Controllers\CrudController;
+use App\Models\Brand;
 use App\Models\Category;
 use App\Models\PostTranslate;
 use App\Models\Post;
@@ -28,7 +29,8 @@ class ProductController extends CrudController
         $query = $request->get('_query');
 
         $data = $this->modelClass::when(!empty($query), function ($q) use ($query) {
-            $q->where('name', 'ilike', '%' . $query . '%');
+            $q->where('name', 'ilike', '%' . $query . '%')
+                ->orWhere('vendor_code', 'ilike', '%' . $query . '%');
         })->orderBy('created_at', 'DESC')->paginate(15);
 
         if ($request->ajax()) {
@@ -46,8 +48,9 @@ class ProductController extends CrudController
     {
         $data = $this->modelClass;
         $categories = Category::orderBy('sort', 'asc')->get();
+        $brands = Brand::orderBy('sort', 'asc')->get();
 
-        return view('admin.'.$this->folderName.'.create', compact('data', 'categories'));
+        return view('admin.'.$this->folderName.'.create', compact('data', 'categories', 'brands'));
     }
 
     public function store(Request $request)
@@ -65,8 +68,9 @@ class ProductController extends CrudController
     {
         $data = $this->modelClass::findOrFail($id);
         $categories = Category::orderBy('sort', 'asc')->get();
+        $brands = Brand::orderBy('sort', 'asc')->get();
 
-        return view('admin.'.$this->folderName.'.edit', compact('data', 'categories'));
+        return view('admin.'.$this->folderName.'.edit', compact('data', 'categories', 'brands'));
     }
 
     public function update(Request $request, $id)

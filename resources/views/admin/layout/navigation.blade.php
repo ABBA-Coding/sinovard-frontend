@@ -37,6 +37,15 @@
                 </li>
 
                 <li class="nav-item">
+                    <a href="{{ route('admin.brands.index') }}" class="nav-link ">
+                        <span class="pcoded-micon">
+                            <i class="feather icon-star"></i>
+                        </span>
+                        <span class="pcoded-mtext">Бренды</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
                     <a href="{{ route('admin.products.index') }}" class="nav-link ">
                         <span class="pcoded-micon">
                             <i class="feather icon-package"></i>

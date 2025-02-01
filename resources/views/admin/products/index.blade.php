@@ -141,8 +141,6 @@
             debounce(function () {
                 let query = $(this).val();
 
-                console.log(query);
-
                 $.ajax({
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
@@ -152,6 +150,15 @@
                     data: { _query: query },
                     success: function (data) {
                         result.empty().append(data.products_view);
+
+                        // Обновление URL без перезагрузки страницы
+                        let newUrl = new URL(window.location);
+                        if (query) {
+                            newUrl.searchParams.set('_query', query);
+                        } else {
+                            newUrl.searchParams.delete('_query');
+                        }
+                        history.replaceState(null, '', newUrl);
                     },
                 });
             }, 300) // задержка в 300 мс

@@ -97,6 +97,17 @@
                                 </select>
                             </div>
 
+                            <!------ brand ------>
+                            <div class="form-group">
+                                <label>Бренд</label>
+                                <select name="brand_id" class="select2">
+                                    <option value="0">Не выбрано</option>
+                                    @foreach($brands as $brand)
+                                        <option value="{{ $brand->id }}">{{ $brand->name_ru }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+
                             <!------ vendor_code ------>
                             <div class="form-group">
                                 <label>Артикул</label>

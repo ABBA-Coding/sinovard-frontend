@@ -16,7 +16,7 @@ class Product extends Model
 
     protected $table = 'products';
 
-    protected $fillable = ['name', 'ref_id', 'file_id', 'category_id', 'vendor_code', 'price', 'quantity', 'slug', 'status', 'top', 'created_at', 'updated_at'];
+    protected $fillable = ['name', 'ref_id', 'file_id', 'category_id', 'brand_id', 'vendor_code', 'price', 'quantity', 'slug', 'status', 'top', 'created_at', 'updated_at'];
 
     protected $with = ['translate', 'category'];
 
@@ -42,6 +42,11 @@ class Product extends Model
         return $this->belongsTo(Category::class, 'category_id');
     }
 
+    public function brand(): BelongsTo
+    {
+        return $this->belongsTo(Brand::class, 'brand_id');
+    }
+
     public function photos(): HasMany
     {
         return $this->hasMany(ProductPhoto::class, 'product_id');
@@ -53,6 +58,15 @@ class Product extends Model
             $this->attributes['category_id'] = $value;
         } else {
             $this->attributes['category_id'] = null;
+        }
+    }
+
+    public function setBrandIdAttribute($value)
+    {
+        if ((int)$value !== 0) {
+            $this->attributes['brand_id'] = $value;
+        } else {
+            $this->attributes['brand_id'] = null;
         }
     }
 

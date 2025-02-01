@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Banner;
+use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Faq;
 use App\Models\Feedback;
@@ -28,6 +29,9 @@ class HomeController extends Controller
 
             $categories = Category::with('children')->where('status', 1)->whereNull('parent_id')->get();
             view()->share('categories', $categories);
+
+            $brands = Brand::where('status', 1)->orderBy('sort', 'asc')->get();
+            view()->share('brands', $brands);
         }
     }
 
@@ -58,9 +62,14 @@ class HomeController extends Controller
 
         $query = $request->get('query');
         $category = null;
+        $brand = null;
 
-        if(!empty($slug)) {
-            $category = Category::where('slug', $slug)->first();
+        if(!empty($request->get('category'))) {
+            $category = Category::where('slug', $request->get('category'))->first();
+        }
+
+        if(!empty($request->get('brand'))) {
+            $brand = Brand::where('slug', $request->get('brand'))->first();
         }
 
         $products = Product::orderBy('created_at', 'desc')
@@ -72,10 +81,13 @@ class HomeController extends Controller
             ->when($category instanceof Category, function ($q) use ($category) {
                 $q->where('category_id', $category->id);
             })
+            ->when($brand instanceof Brand, function ($q) use ($brand) {
+                $q->where('brand_id', $brand->id);
+            })
             ->where('status', 1)
             ->paginate(8);
 
-        return view('frontend.pages.catalog', compact('banners', 'category', 'products'));
+        return view('frontend.pages.catalog', compact('banners', 'category', 'brand', 'products'));
     }
 
     public function product($slug)
@@ -123,19 +135,57 @@ class HomeController extends Controller
         return '';
     }
 
+    public function order(Request $request)
+    {
+        if ($request->ajax()) {
+            $request->validate(Feedback::rules());
+
+            $message = '';
+
+            $cart = json_decode($request->get('cart'), true);
+
+            foreach ($cart as $cartItem) {
+                if (isset($cartItem['id'])) {
+                    $product = Product::where('id', $cartItem['id'])->first();
+                } else {
+                    $product = Product::where('slug', $cartItem['slug'])->first();
+                }
+
+                if ($product instanceof Product) {
+                    $message.=$cartItem['quantity'].' шт' . ' - ' . $product->name.' ('.$product->vendor_code.')' ."\n";
+                }
+            }
+
+            Feedback::create([
+                'phone' => $request->phone,
+                'name' => $request->get('name') . ' ' . $request->get('surname'),
+                'type' => $request->get('type'),
+                'message' => $message
+            ]);
+            return response()->json('success');
+        }
+        abort(404);
+        return '';
+    }
+
     public function getBasketItems(Request $request)
     {
         $data = $request->get('data') ?? [];
+        $actualCart = [];
         $products_sum = 0;
 
         $products = [];
         foreach ($data as $item) {
             if (!empty($item['id'])) {
                 $product = Product::where('id', $item['id'])->first();
-                $product->cart_quantity = $item['quantity'];
-                $products[] = $product;
 
-                $products_sum+=($product->cart_quantity*$product->amount);
+                if ($product instanceof Product) {
+                    $actualCart[] = $item;
+                    $product->cart_quantity = $item['quantity'];
+                    $products[] = $product;
+
+                    $products_sum+=($product->cart_quantity*$product->amount);
+                }
             }
         }
         $view = view('frontend.components.basket-items', compact('products'))->render();
@@ -143,7 +193,8 @@ class HomeController extends Controller
         return response()->json([
             'products_view' => $view,
             'products_count' => count($products),
-            'products_sum' => number_format(round($products_sum), 0,',',' ')
+            'products_sum' => number_format(round($products_sum), 0,',',' '),
+            'actual_cart' => $actualCart
         ]);
     }
 }

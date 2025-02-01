@@ -6,7 +6,7 @@
         <section class="sec-padding">
             <div class="container">
                 <div class="row">
-                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-8">
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-8">
                         @component('frontend.components.breadcrumbs', ['model' => $product]) @endcomponent
 
                         <div class="thump-slider">
@@ -50,14 +50,18 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-4">
                         <div class="product-single">
                             <div class="product-single__top">
                                 <div>
                                     <div class="product-single__title">{{ $product->translate->name }}</div>
                                     <div class="product-single__article">{{ __('static.Арт') }} {{ $product->vendor_code }}</div>
-                                    <!--<div class="product-single__name">Название бренда</div>-->
+                                    @if($product->brand)
+                                        <div class="product-single__name">{{ $product->brand->{'name_'.$lang} }}</div>
+                                    @endif
+                                    @if($setting->show_price == 1)
                                     <div class="product-single__price">@price($product->amount) {{ __('static.сум') }}</div>
+                                    @endif
                                 </div>
                                 <button class="product-single__default">
                                     <span>{{ __('static.Руководство по размерам') }}</span>
@@ -83,7 +87,7 @@
 {{--                                </div>--}}
 
                                 <div class="product-single__buttons">
-                                    <button class="btn btn-main">
+                                    <button class="btn btn-blue showOrderModal">
                                         <span>{{ __('static.Заказать') }}</span>
                                     </button>
                                     <button class="btn btn-white addToBasket" data-id="{{ $product->id }}">
@@ -106,10 +110,12 @@
                                     <div class="product-single__info-title" style="margin-bottom: 20px">{{ __('static.Характеристики') }}</div>
 
                                     @foreach($product->translate->characteristics as $i => $characteristic)
+                                        @if(!empty($characteristic[0]) && !empty($characteristic[1]))
                                         <div class="product-single__info-item" style="border-bottom: 1px solid #B1B1B1; padding-bottom: 10px">
                                             <div class="product-single__info-characteristics">{{ $characteristic[0] }}</div>
                                             <div class="product-single__info-characteristics --max">{{ $characteristic[1] }}</div>
                                         </div>
+                                        @endif
                                     @endforeach
                                 </div>
                             </div>

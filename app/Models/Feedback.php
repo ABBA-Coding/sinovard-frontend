@@ -8,6 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Feedback extends Model
 {
+    const TYPE_FEEDBACK = 1;
+    const TYPE_ORDER = 2;
+
     use ModelHelperTrait;
 
     protected $table = 'feedback';
@@ -40,6 +43,18 @@ class Feedback extends Model
                 return '<span class="btn-status btn-status-warning">прочитано</span>';
             default:
                 return '';
+        }
+    }
+
+    public function getTypeLabelAttribute()
+    {
+        switch ($this->type) {
+            case Feedback::TYPE_FEEDBACK:
+                return 'Заявка';
+            case Feedback::TYPE_ORDER:
+                return 'Заказ';
+            default:
+                return '-';
         }
     }
 

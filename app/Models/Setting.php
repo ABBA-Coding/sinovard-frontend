@@ -13,7 +13,7 @@ class Setting extends Model
 
     protected $table = 'settings';
 
-    protected $fillable = ['phone', 'phone2', 'meta_title', 'meta_description', 'meta_keywords', 'meta_tags',
+    protected $fillable = ['show_price', 'phone', 'phone2', 'meta_title', 'meta_description', 'meta_keywords', 'meta_tags',
         'address', 'email', 'email2', 'fax', 'instagram', 'twitter', 'vk', 'facebook', 'telegram',
         'linkedin', 'youtube', 'map_iframe', 'map_link', 'created_at', 'updated_at', 'banner_id'];
 
@@ -59,6 +59,19 @@ class Setting extends Model
         }
 
         return [];
+    }
+
+    public function setShowPriceAttribute($value)
+    {
+        if (is_string($value)) {
+            if ($value === 'on') {
+                $this->attributes['show_price'] = 1;
+            } else {
+                $this->attributes['show_price'] = 0;
+            }
+        } else {
+            $this->attributes['show_price'] = $value;
+        }
     }
 
     public function banner(): BelongsTo
