@@ -49,8 +49,8 @@
                     <div class="banner-item__text">{!! __('static.banner_bottom.Качественный <br/>продукт с гарантией') !!}</div>
                 </div>
                 <div class="banner-item">
-                    <div class="banner-item__title">{{ __('static.banner_bottom.Больше 10 000 довольных клиентов') }}</div>
-                    <div class="banner-item__text">{!! __('static.banner_bottom.Большое кол-во <br/>постоянных покупателей') !!}</div>
+                    <div class="banner-item__title">{{ __('static.banner_bottom.Более 10 000+ видов запчастей') }}</div>
+                    <div class="banner-item__text">{!! __('static.banner_bottom.Все для грузовиков <br> в одном месте') !!}</div>
                 </div>
                 <div class="banner-item">
                     <div class="banner-item__title">{{ __('static.banner_bottom.Профессиональные специалисты') }}</div>

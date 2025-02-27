@@ -48,3 +48,9 @@
         </td>
     </tr>
 @endif
+
+@if ($data->hasPages())
+    <tr>
+        <td colspan="6">{{ $data->appends(['_query' => $query])->links() }}</td>
+    </tr>
+@endif

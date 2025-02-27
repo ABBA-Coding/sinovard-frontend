@@ -47,7 +47,7 @@
                                 <tr>
                                     <th colspan="10">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" id="searchInput" placeholder="Поиск">
+                                            <input type="text" class="form-control" id="searchInput" value="{{ request('_query') }}" placeholder="Поиск">
                                         </div>
                                     </th>
                                 </tr>
@@ -103,14 +103,13 @@
                                         </td>
                                     </tr>
                                 @endif
-                                </tbody>
+
                                 @if ($data->hasPages())
-                                    <tfoot>
-                                        <tr>
-                                            <td colspan="6">{{ $data->appends(request()->query())->links() }}</td>
-                                        </tr>
-                                    </tfoot>
+                                    <tr>
+                                        <td colspan="10">{{ $data->appends(request()->query())->links() }}</td>
+                                    </tr>
                                 @endif
+                                </tbody>
                             </table>
                         </div>
                     </div>
@@ -136,8 +135,9 @@
         const result = $("#result");
 
         // Логика для обработки ввода
-        $('#searchInput').on(
+        $('body').on(
             'input',
+            "#searchInput",
             debounce(function () {
                 let query = $(this).val();
 
@@ -161,7 +161,7 @@
                         history.replaceState(null, '', newUrl);
                     },
                 });
-            }, 300) // задержка в 300 мс
+            }, 600) // задержка в 600 мс
         );
     </script>
 @endsection

@@ -215,42 +215,24 @@ $(document).ready(function () {
     if (document.querySelector(".swiper-7")) {
         new Swiper(".swiper-7", {
             loop: true,
-            slidesPerView: 3,
+            slidesPerView: 2,
             spaceBetween: 20,
-
             navigation: {
                 nextEl: ".portners-section__next",
                 prevEl: ".portners-section__prev",
             },
             breakpoints: {
-                // when window width is >= 320px
                 320: {
-                    slidesPerView: 1,
+                    slidesPerView: 2,
                     spaceBetween: 15,
                 },
-                // when window width is >= 480px
                 480: {
-                    slidesPerView: 1.3,
+                    slidesPerView: 2,
                     spaceBetween: 15,
-                    centeredSlides: true,
-                },
-                // when window width is >= 640px
-                640: {
-                    slidesPerView: 1.9,
-                    spaceBetween: 15,
-                    centeredSlides: true,
                 },
                 992: {
-                    slidesPerView: 2.1,
-                    spaceBetween: 15,
-                },
-                1200: {
-                    slidesPerView: 2.5,
-                    spaceBetween: 15,
-                },
-                1400: {
                     slidesPerView: 3,
-                    spaceBetween: 20,
+                    spaceBetween: 15,
                 },
             },
         });
@@ -300,7 +282,7 @@ $(document).ready(function () {
 
     if (document.querySelector(".thump-slider")) {
         var swiper = new Swiper(".mySwiper", {
-            loop: true,
+            loop: false,
             spaceBetween: 10,
             slidesPerView: 6,
             freeMode: true,
@@ -336,7 +318,7 @@ $(document).ready(function () {
             },
         });
         var swiper2 = new Swiper(".mySwiper2", {
-            loop: true,
+            loop: false,
             spaceBetween: 10,
             navigation: {
                 nextEl: ".swiper-button-next",

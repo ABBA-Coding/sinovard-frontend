@@ -19,7 +19,7 @@
     <link rel="icon" type="image/ico" href="/frontend/favicon.svg" sizes="32x32">
     <link rel="stylesheet" href="/frontend/styles/vendor.css">
     <link rel="stylesheet" href="/frontend/styles/main.css?v=1">
-    <link rel="stylesheet" href="/frontend/styles/custom.css">
+    <link rel="stylesheet" href="/frontend/styles/custom.css?v=1">
     <style>
         .pre-line {
             white-space: pre-line;
@@ -45,7 +45,7 @@
 
 <script src="/frontend/scripts/jQuery-3.4.1.min.js"></script>
 <script src="/frontend/scripts/vendor.min.js"></script>
-<script src="/frontend/scripts/main.js"></script>
+<script src="/frontend/scripts/main.js?v=1"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 

@@ -35,7 +35,7 @@
                             <span>{{ __('static.Каталог') }}</span>
                         </div>
                     </div>
-                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-9">
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-8 col-xl-9">
                         <div class="catalog-filter">
                             <ul class="catalog-filter__list">
                                 @if(!empty($category))
@@ -122,7 +122,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-9">
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-8 col-xl-9">
                         <div class="row">
                             @foreach($products as $product)
                                 <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">

@@ -79,8 +79,8 @@ return [
     'banner_bottom' => [
         '100% Качество' => '100% Quality',
         'Качественный <br/>продукт с гарантией' => 'High-quality <br/>product with a guarantee',
-        'Больше 10 000 довольных клиентов' => 'More than 10,000 satisfied customers',
-        'Большое кол-во <br/>постоянных покупателей' => 'A large <br />number of regular buyers',
+        'Более 10 000+ видов запчастей' => 'More than 10,000 types of spare parts',
+        'Все для грузовиков <br> в одном месте' => 'Everything for <br> trucks in one place',
         'Профессиональные специалисты' => 'Professional specialists',
         'Наши сотрудники помогут <br/>подобрать товар' => 'Our staff will <br/>help you choose the product'
     ],
@@ -97,10 +97,10 @@ return [
         'description_5' => 'We offer attractive prices, discounts for regular customers, and promotional offers.',
     ],
     'counts' => [
-        'Опыт работы' => 'Years of experience',
-        'Партнеры' => 'Partners',
-        'Персонал' => 'Staff',
-        'Филиалы' => 'Branches',
+        'Лет опыта работы' => 'Years of work experience',
+        'Довольных клиентов' => 'Satisfied customers',
+        'Партнеров' => 'Partners',
+        'Профессиональных сотрудников' => 'Professional staff',
     ],
 
     'Наша компания —' => 'Our company is a reliable supplier of auto parts, which strives to offer customers only high-quality and affordable products. We work with trusted manufacturers, providing a wide range of spare parts for various car brands and models.',

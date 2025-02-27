@@ -34,7 +34,7 @@ class ProductController extends CrudController
         })->orderBy('created_at', 'DESC')->paginate(15);
 
         if ($request->ajax()) {
-            $view = view('admin.products.result', compact('data'))->render();
+            $view = view('admin.products.result', compact('data', 'query'))->render();
 
             return response()->json([
                 'products_view' => $view,

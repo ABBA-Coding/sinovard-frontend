@@ -78,9 +78,9 @@ return [
 
     'banner_bottom' => [
         '100% Качество' => '100% Sifat',
-        'Качественный <br/>продукт с гарантией' => 'Sifatli mahsulot <br>kafolat bilan',
-        'Больше 10 000 довольных клиентов' => '10.000 dan ortiq mamnun mijozlar',
-        'Большое кол-во <br/>постоянных покупателей' => 'Ko‘plab <br>doimiy xaridorlar',
+        'Качественный <br/> продукт с гарантией' => 'Sifatli mahsulot <br>kafolat bilan',
+        'Более 10 000+ видов запчастей' => '10 000+ turdagi ehtiyot qismlar',
+        'Все для грузовиков <br> в одном месте' => 'Yuk mashinalari uchun <br> hamma ehtiyot qismlar <br> bir joyda',
         'Профессиональные специалисты' => 'Professional mutaxassislar',
         'Наши сотрудники помогут <br/>подобрать товар' => 'Xodimlarimiz mahsulotni <br/>tanlashda yordam beradi'
     ],
@@ -97,10 +97,10 @@ return [
         'description_5' => 'Biz yaxshi narxlar, sodiq mijozlar uchun chegirmalar va ulgurji takliflarni taklif qilamiz.',
     ],
     'counts' => [
-        'Опыт работы' => 'Ish tajribasi',
-        'Партнеры' => 'Hamkorlar',
-        'Персонал' => 'Xodimlar',
-        'Филиалы' => 'Filiallar',
+        'Лет опыта работы' => 'Yillik ish tajribasi',
+        'Довольных клиентов' => 'Mamnun  mijozlar',
+        'Партнеров' => 'Hamkorlar',
+        'Профессиональных сотрудников' => 'Professional xodimlar',
     ],
 
     'Наша компания —' => 'Bizning kompaniyamiz mijozlarga faqat sifatli va arzon mahsulotlarni taklif qilishni maqsad qilgan, ishonchli avtomobil ehtiyot qismlari yetkazib beruvchimiz. Biz ishonchli ishlab chiqaruvchilar bilan ishlaymiz, turli markalar va avtomobil modellari uchun ehtiyot qismlarning keng assortimentini taqdim etamiz.',

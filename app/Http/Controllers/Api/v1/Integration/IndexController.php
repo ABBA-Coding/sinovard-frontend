@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api\v1\Integration;
 use App\Exceptions\BusinessException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
 
 /**
  *  Integration
@@ -13,7 +14,7 @@ class IndexController
 {
     public function products(Request $request)
     {
-        $request->validate([
+        $validator = Validator::make($request->all(), [
             'data' => 'required|array',
             'data.*.ref_id' => 'required|string',
             'data.*.name' => 'required|string',
@@ -21,9 +22,16 @@ class IndexController
             'data.*.price' => 'nullable|numeric',
         ]);
 
+        if ($validator->fails()) {
+            return response()->json([
+                'success' => false,
+                'errors' => $validator->errors(),
+            ], 422);
+        }
+
         DB::beginTransaction();
         try {
-            $chunks = array_chunk($request->get('data'), 300); // По 300 записей за раз
+            $chunks = array_chunk($request->get('data'), 500); // По 300 записей за раз
 
             foreach ($chunks as $chunk) {
                 DB::table('products')->insert($chunk);

@@ -65,64 +65,56 @@
                 <div class="portners-section__wrapper">
                     <div class="portners-section__title">
                         @if($lang === 'ru')
-                            <span>Лучшие партнеры</span>
-                            <span> делают лучшие продукты</span>
+                            <span>Наши партнеры </span>
                         @elseif($lang === 'uz')
-                            <span>Eng yaxshi hamkorlar</span>
-                            <span> eng yaxshi mahsulotlarni</span>
-                            <span> yaratishadi</span>
+                            <span>Bizning hamkorlarimiz</span>
                         @else
-                            <span>Best partners</span>
-                            <span> make the best products</span>
+                            <span>Our partners</span>
                         @endif
                     </div>
 
                     <div class="portners-section__slider">
-                        <div class="row align-items-end">
-                            <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                                <div class="portners-section__buttons">
-                                    <button class="portners-section__prev">
-                                        <img src="/frontend/images/icon/sliderPrev.svg" alt="" />
-                                    </button>
-                                    <button class="portners-section__next">
-                                        <img src="/frontend/images/icon/sliderNext.svg" alt="" />
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-9">
-                                <div class="swiper swiper-7">
-                                    <div class="swiper-wrapper">
-                                        <div class="swiper-slide">
-                                            <div class="portners-card" style="padding: 20px;min-height: auto">
-                                                <div class="portners-card__logo">
-                                                    <img src="/frontend/images/partners/p1.png" alt="" />
-                                                </div>
+                        <div class="portners-slider">
+                            <div class="swiper swiper-7">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="portners-card" style="padding: 20px;min-height: auto">
+                                            <div class="portners-card__logo">
+                                                <img src="/frontend/images/partners/p1.png" alt="" />
                                             </div>
                                         </div>
-                                        <div class="swiper-slide">
-                                            <div class="portners-card" style="padding: 20px;min-height: auto">
-                                                <div class="portners-card__logo">
-                                                    <img src="/frontend/images/partners/p2.png" alt="" />
-                                                </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="portners-card" style="padding: 20px;min-height: auto">
+                                            <div class="portners-card__logo">
+                                                <img src="/frontend/images/partners/p2.png" alt="" />
                                             </div>
                                         </div>
-                                        <div class="swiper-slide">
-                                            <div class="portners-card" style="padding: 20px;min-height: auto">
-                                                <div class="portners-card__logo">
-                                                    <img src="/frontend/images/partners/p3.png" alt="" />
-                                                </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="portners-card" style="padding: 20px;min-height: auto">
+                                            <div class="portners-card__logo">
+                                                <img src="/frontend/images/partners/p3.png" alt="" />
                                             </div>
                                         </div>
-                                        <div class="swiper-slide">
-                                            <div class="portners-card" style="padding: 20px;min-height: auto">
-                                                <div class="portners-card__logo">
-                                                    <img src="/frontend/images/partners/p4.png" alt="" />
-                                                </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="portners-card" style="padding: 20px;min-height: auto">
+                                            <div class="portners-card__logo">
+                                                <img src="/frontend/images/partners/p4.png" alt="" />
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                        <div class="portners-section__buttons">
+                            <button class="portners-section__prev">
+                                <img src="/frontend/images/icon/sliderPrev.svg" alt="" />
+                            </button>
+                            <button class="portners-section__next">
+                                <img src="/frontend/images/icon/sliderNext.svg" alt="" />
+                            </button>
                         </div>
                     </div>
                 </div>

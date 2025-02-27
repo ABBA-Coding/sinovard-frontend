@@ -14,25 +14,25 @@
         <div class="about-section__item">
             <div class="about-section__item-wrap">
                 <div class="about-section__num">20+</div>
-                <div class="about-section__span">{{ __('static.counts.Опыт работы') }}</div>
+                <div class="about-section__span">{{ __('static.counts.Лет опыта работы') }}</div>
+            </div>
+        </div>
+        <div class="about-section__item">
+            <div class="about-section__item-wrap">
+                <div class="about-section__num">10000+</div>
+                <div class="about-section__span">{{ __('static.counts.Довольных клиентов') }}</div>
             </div>
         </div>
         <div class="about-section__item">
             <div class="about-section__item-wrap">
                 <div class="about-section__num">1000+</div>
-                <div class="about-section__span">{{ __('static.counts.Партнеры') }}</div>
+                <div class="about-section__span">{{ __('static.counts.Партнеров') }}</div>
             </div>
         </div>
         <div class="about-section__item">
             <div class="about-section__item-wrap">
-                <div class="about-section__num">8</div>
-                <div class="about-section__span">{{ __('static.counts.Персонал') }}</div>
-            </div>
-        </div>
-        <div class="about-section__item">
-            <div class="about-section__item-wrap">
-                <div class="about-section__num">4</div>
-                <div class="about-section__span">{{ __('static.counts.Филиалы') }}</div>
+                <div class="about-section__num">8+</div>
+                <div class="about-section__span">{{ __('static.counts.Профессиональных сотрудников') }}</div>
             </div>
         </div>
         <div class="about-section__settings1 about-section__decor">
